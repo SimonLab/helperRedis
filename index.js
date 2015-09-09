@@ -1,9 +1,12 @@
 var Redis = require('redis');
 var Url = require('url');
 
-var url = "redis://127.0.0.1:6379/0";
+//var url = "redis://127.0.0.1:6379/0";
+var url = "redis://h:p2sk5csuleo5vh3btg777fd6cdc@ec2-54-217-234-142.eu-west-1.compute.amazonaws.com:13459";
 var RedisURL = Url.parse(url);
 var Client = Redis.createClient(RedisURL.port, RedisURL.hostname);
+
+Client.auth(RedisURL.auth.split(':')[1]);
 
 
 //object
@@ -34,4 +37,3 @@ for (var i = 0; i<20; ++i) {
 
 
 console.log('Data inserted');
-exit();
