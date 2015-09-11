@@ -16,6 +16,7 @@ Client.flushall(function (err) {
 	//object
 for (var i = 0; i<20; ++i) {
     var review = {
+        id: i,
         date: "21-09-2015",
         artistName: "daVinci",
         artName: "Modernism",
